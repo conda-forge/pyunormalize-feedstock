@@ -6,26 +6,27 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyunormalize-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyunormalize-{{ version }}.tar.gz
   sha256: 2e1dfbb4a118154ae26f70710426a52a364b926c9191f764601f5a8cb12761f7
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
     - pyunormalize
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/mlodewijck/pyunormalize
