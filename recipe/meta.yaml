@@ -1,5 +1,5 @@
 {% set name = "pyunormalize" %}
-{% set version = "16.0.0" %}
+{% set version = "17.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyunormalize-{{ version }}.tar.gz
-  sha256: 2e1dfbb4a118154ae26f70710426a52a364b926c9191f764601f5a8cb12761f7
+  sha256: 0949a3e56817e287febcaf1b0cc4b5adf0bb107628d379335938040947eec792
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
